@@ -2148,9 +2148,10 @@ bool intel_phy_is_snps(struct drm_i915_private *dev_priv, enum phy phy)
 	else if (IS_DG2(dev_priv))
 		/*
 		 * All four "combo" ports and the TC1 port (PHY E) use
-		 * Synopsis PHYs.
+		 * Synopsis PHYs. However the last will only be used when
+		 * PORT_TC1 is enabled.
 		 */
-		return phy <= PHY_E;
+		return phy <= PHY_D;
 
 	return false;
 }
