@@ -2150,7 +2150,7 @@ bool intel_phy_is_snps(struct drm_i915_private *dev_priv, enum phy phy)
 		 * All four "combo" ports and the TC1 port (PHY E) use
 		 * Synopsis PHYs.
 		 */
-		return phy <= PHY_E;
+		return phy <= PHY_D;
 
 	return false;
 }
@@ -8763,7 +8763,6 @@ static void intel_setup_outputs(struct drm_i915_private *dev_priv)
 		intel_ddi_init(dev_priv, PORT_B);
 		intel_ddi_init(dev_priv, PORT_C);
 		intel_ddi_init(dev_priv, PORT_D_XELPD);
-		intel_ddi_init(dev_priv, PORT_TC1);
 	} else if (IS_ALDERLAKE_P(dev_priv)) {
 		intel_ddi_init(dev_priv, PORT_A);
 		intel_ddi_init(dev_priv, PORT_B);
